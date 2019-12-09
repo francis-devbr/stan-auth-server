@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import br.com.unip.stan.authserver.domain.Role;
-import br.com.unip.stan.authserver.domain.Usuario;
+import br.com.unip.stan.authserver.adapter.persistence.entity.Regra;
+import br.com.unip.stan.authserver.adapter.persistence.entity.Usuario;
 import br.com.unip.stan.authserver.usecase.port.in.LoginServicePort;
 import br.com.unip.stan.authserver.usecase.port.out.LoginPort;
 import lombok.RequiredArgsConstructor;
@@ -34,23 +34,23 @@ public class LoginUseCase implements LoginServicePort {
 			}
 			org.springframework.security.core.userdetails.User userDetails = new org.springframework.security.core.userdetails.User(
 					user.getUsername(), user.getPassword(), user.isEnable(), true, true, true,
-					getAuthorities(user.getRoles()));
+					getAuthorities(user.getRegras()));
 			return userDetails;
 		} catch (final Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	private final Collection<? extends GrantedAuthority> getAuthorities(Collection<Role> roles) {
+	private final Collection<? extends GrantedAuthority> getAuthorities(Collection<Regra> roles) {
 		
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		
-		for (Role role : roles) {
-			authorities.add(new SimpleGrantedAuthority(role.getName()));
+		for (Regra role : roles) {
+			authorities.add(new SimpleGrantedAuthority(role.getNome()));
 			authorities.addAll(
-					role.getPrivileges()
+					role.getPrivilegios()
 					.stream()
-					.map(p -> new SimpleGrantedAuthority(p.getName()))
+					.map(p -> new SimpleGrantedAuthority(p.getNome()))
 					.collect(Collectors.toList()));
 		}
 		return authorities;

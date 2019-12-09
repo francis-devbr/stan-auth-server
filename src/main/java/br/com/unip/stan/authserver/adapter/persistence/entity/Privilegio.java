@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @EqualsAndHashCode(callSuper = false)
-public class PrivilegioJpaEntity extends BaseEntityAudit {
+public class Privilegio extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 

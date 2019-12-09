@@ -3,6 +3,7 @@ package br.com.unip.stan.authserver.adapter.persistence.entity;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -23,24 +24,33 @@ import lombok.experimental.SuperBuilder;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "REGRA")
+@Table(name = "USUARIO")
 @Entity
+@SuperBuilder
 @Getter
 @Setter
-@SuperBuilder
 @EqualsAndHashCode(callSuper = false)
-public class RegraJpaEntity extends BaseEntityAudit {
+public class Usuario extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
-	private String nome;
+	@Column(unique = true)
+	private String username;
+
+	@NotNull
+	private String password;
 
 	@Fetch(FetchMode.SELECT)
-	@ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name = "regras_privilegios", 
-	joinColumns = @JoinColumn(name = "regra_id", referencedColumnName = "id"), 
-	inverseJoinColumns = @JoinColumn(name = "privilegio_id", referencedColumnName = "id"))
-	private Collection<PrivilegioJpaEntity> privilegiosJpaEntity;
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinTable(name = "usuarios_regras", 
+	joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"), 
+	inverseJoinColumns = @JoinColumn(name = "regra_id", referencedColumnName = "id"))
+	private Collection<Regra> regras;
+
+	private Boolean isSuperUser;
+	
+	@NotNull
+	private boolean isEnable;
 
 }
