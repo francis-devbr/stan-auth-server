@@ -15,10 +15,6 @@
 	<name>stan-auth-server</name>
 	<description>Authorization Server para Stan</description>
 
-	<properties>
-		<java.version>13</java.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
