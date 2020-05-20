@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver.usecase;
+package br.com.x.erp.authorization.usecase;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,10 +11,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import br.com.unip.stan.authserver.adapter.persistence.entity.Regra;
-import br.com.unip.stan.authserver.adapter.persistence.entity.Usuario;
-import br.com.unip.stan.authserver.usecase.port.in.LoginServicePort;
-import br.com.unip.stan.authserver.usecase.port.out.LoginPort;
+import br.com.x.erp.authorization.adapter.persistence.entity.Regra;
+import br.com.x.erp.authorization.adapter.persistence.entity.Usuario;
+import br.com.x.erp.authorization.usecase.port.in.LoginServicePort;
+import br.com.x.erp.authorization.usecase.port.out.LoginPort;
 import lombok.RequiredArgsConstructor;
 
 

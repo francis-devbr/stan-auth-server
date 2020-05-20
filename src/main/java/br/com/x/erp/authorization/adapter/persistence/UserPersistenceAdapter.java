@@ -1,10 +1,10 @@
-package br.com.unip.stan.authserver.adapter.persistence;
+package br.com.x.erp.authorization.adapter.persistence;
 
 import org.springframework.stereotype.Component;
 
-import br.com.unip.stan.authserver.adapter.persistence.entity.Usuario;
-import br.com.unip.stan.authserver.adapter.persistence.repository.UserRepository;
-import br.com.unip.stan.authserver.usecase.port.out.LoginPort;
+import br.com.x.erp.authorization.adapter.persistence.entity.Usuario;
+import br.com.x.erp.authorization.adapter.persistence.repository.UserRepository;
+import br.com.x.erp.authorization.usecase.port.out.LoginPort;
 import lombok.RequiredArgsConstructor;
 
 @Component

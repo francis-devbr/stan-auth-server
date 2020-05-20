@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver.config;
+package br.com.x.erp.authorization.config;
 
 import java.io.IOException;
 

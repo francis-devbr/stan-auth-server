@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver.config;
+package br.com.x.erp.authorization.config;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import br.com.unip.stan.authserver.usecase.port.in.LoginServicePort;
+import br.com.x.erp.authorization.usecase.port.in.LoginServicePort;
 import lombok.RequiredArgsConstructor;
 
 @Configuration

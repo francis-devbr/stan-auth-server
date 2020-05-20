@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver.adapter.persistence.entity;
+package br.com.x.erp.authorization.adapter.persistence.entity;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver.usecase.port.in;
+package br.com.x.erp.authorization.usecase.port.in;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

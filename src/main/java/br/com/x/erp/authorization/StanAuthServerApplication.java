@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver;
+package br.com.x.erp.authorization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

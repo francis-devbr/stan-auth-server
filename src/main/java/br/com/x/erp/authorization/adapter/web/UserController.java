@@ -1,4 +1,4 @@
-package br.com.unip.stan.authserver.adapter.web;
+package br.com.x.erp.authorization.adapter.web;
 
 import java.security.Principal;
 
